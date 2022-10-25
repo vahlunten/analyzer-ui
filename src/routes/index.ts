@@ -3,7 +3,7 @@ import Questions from './Questions.svelte'
 
 const routes = {
     '/': Home,
-    '/questions': Questions,
+    '/questions': Questions
 }
 
 export default routes
