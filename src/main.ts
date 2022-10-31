@@ -1,3 +1,4 @@
+import './app.postcss'
 import App from './App.svelte'
 
 if (import.meta.env.DEV) {

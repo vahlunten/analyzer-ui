@@ -27,27 +27,6 @@
 </script>
 
 <script lang="ts">
-    // import { bgColor } from '../lib/stores'
-
-
-    // export let title = ''
-
-    // const bgDefault = 'bg-gray-900'
-    // const bgGradient =
-    //     'bg-gradient-to-r from-gray-800 via-green-900 to-gray-800'
-
-    // function toggleBackground() {
-    //     $bgColor = $bgColor === bgDefault ? bgGradient : bgDefault
-    // }
-
-    // $: {
-    //     bgGradient
-    //         .split(' ')
-    //         .forEach((c) =>
-    //             document.body.classList.toggle(c, $bgColor.includes(c)),
-    //         )
-    //     document.body.classList.toggle(bgDefault, $bgColor === bgDefault)
-    // }
 
 </script>
 
@@ -57,11 +36,7 @@
 
 <main class="w-full">
     <div class ="m-4 w-full flex overflow-x-auto">
-        <!-- <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">CONCLUSION</button>
-        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
-        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
-        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
-        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button> -->
+       
 
         <button type="button" class="hidden text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Default</button>
 

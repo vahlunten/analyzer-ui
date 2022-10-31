@@ -1,5 +1,5 @@
-<script type="module" lang="ts">
-    export let title: string
+<script lang="ts">
+    export let title: string;
 
     import JSONTree from 'svelte-json-tree'
     // your json data to view
