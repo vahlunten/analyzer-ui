@@ -17,7 +17,7 @@
     }
 </script>
 
-<main class="max-w-full m-4 ">
+<main class="max-w-full">
     <div class="bg-gray-50 inline-flex rounded-lg">
         <p
             class="bg-gray-50 text-md p-6 py-3 width-auto text-xl font-semibold  rounded-lg rounded-b-none dark:text-white"
