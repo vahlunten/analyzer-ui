@@ -1,7 +1,5 @@
 import type { Writable, Readable } from 'svelte/store'
 
-import * as allStores from './stores'
-
 type Stores = {
     [key: string]: Writable<any> | Readable<any>
 }
@@ -14,9 +12,6 @@ export function registerStore(
 ) {
     stores[id] = store
 }
-
-// Register all stores automatically for HMR
-Object.entries(allStores).forEach(([id, store]) => registerStore(id, store))
 
 // preserve the store across HMR updates
 if (import.meta.hot) {
