@@ -1,8 +1,6 @@
 <script context="module" lang="ts">
-    import { path } from 'svelte-pathfinder'
-    import { invalid_attribute_name_character } from 'svelte/internal'
-
-    import Link from '../components/Link.svelte'
+    import { path } from 'svelte-pathfinder';
+    import { invalid_attribute_name_character } from 'svelte/internal';
     import { appName } from '../lib/constants';
     import Table from "./Table.svelte"
 

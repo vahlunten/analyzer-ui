@@ -1,0 +1,453 @@
+{
+    "url": "https://www.alza.sk/hobby/netspa-montana-l-d5347102.htm",
+    "keywords": [
+      {
+        "original": "323,03",
+        "normalized": "323.03",
+        "index": 0
+      },
+      {
+        "original": "Môžete mať zajtra",
+        "normalized": "Môžetemaťzajtra",
+        "index": 1
+      },
+      {
+        "original": "NetSpa MONTANA L",
+        "normalized": "NetSpaMONTANAL",
+        "index": 2
+      }
+    ],
+    "scrapedData": {
+      "initialResponseBody": null,
+      "responseStatus": 200,
+      "domContent": null,
+      "jsonLDData": [
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://www.alza.sk/hobby",
+                "name": "Hobby a z&#225;hrada"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://www.alza.sk/hobby/nafukovacie-virivky/18861799.htm",
+                "name": "Nafukovacie v&#237;rivky"
+              }
+            }
+          ]
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "Product",
+          "name": "NetSpa MONTANA L",
+          "description": "Vírivka – nafukovacia, 110 dýz, pre 4 osoby, tvar kruhu s priemerom 1.75m, objem 700l, kartušová filtrácia, hadica, krycia plachta a podložka súčasťou balenia ",
+          "image": "https://cdn.alza.sk/ImgW.ashx?fd=f5&cd=HHO009",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "323.03",
+            "url": "https://www.alza.sk/hobby/netspa-montana-l-d5347102.htm",
+            "itemCondition": "http://schema.org/NewCondition",
+            "availability": "http://schema.org/InStock",
+            "priceValidUntil": "2022-11-07T23:59:59.0000000"
+          },
+          "brand": "NetSpa",
+          "sku": "HHO009",
+          "mpn": "8588006841091",
+          "gtin13": "8588006841091"
+        }
+      ],
+      "jsonLDDataInitial": [
+        {
+          "@context": "http://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "item": {
+                "@id": "https://www.alza.sk/hobby",
+                "name": "Hobby a z&#225;hrada"
+              }
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "item": {
+                "@id": "https://www.alza.sk/hobby/nafukovacie-virivky/18861799.htm",
+                "name": "Nafukovacie v&#237;rivky"
+              }
+            }
+          ]
+        },
+        {
+          "@context": "http://schema.org",
+          "@type": "Product",
+          "name": "NetSpa MONTANA L",
+          "description": "Vírivka – nafukovacia, 110 dýz, pre 4 osoby, tvar kruhu s priemerom 1.75m, objem 700l, kartušová filtrácia, hadica, krycia plachta a podložka súčasťou balenia ",
+          "image": "https://cdn.alza.sk/ImgW.ashx?fd=f5&cd=HHO009",
+          "offers": {
+            "@type": "Offer",
+            "priceCurrency": "EUR",
+            "price": "323.03",
+            "url": "https://www.alza.sk/hobby/netspa-montana-l-d5347102.htm",
+            "itemCondition": "http://schema.org/NewCondition",
+            "availability": "http://schema.org/InStock",
+            "priceValidUntil": "2022-11-07T23:59:59.0000000"
+          },
+          "brand": "NetSpa",
+          "sku": "HHO009",
+          "mpn": "8588006841091",
+          "gtin13": "8588006841091"
+        }
+      ],
+      "schemaOrgData": null,
+      "schemaOrgDataInitial": null,
+      "metadata": {
+        "author": "Alza a.s.",
+        "description": "Vírivka NetSpa MONTANA L na www.alza.sk. ✅ Bezpečný nákup. ✅ Všetky informácie o produkte. ✅ Vhodné príslušenstvo. ✅ Hodnotenie a recenzie NetSpa MONTANA L od...",
+        "keywords": "NetSpa,MONTANA,L,Nafukovacie vírivky,Nafukovacie vírivky NetSpa,Nafukovacie vírivky,Nafukovacie vírivky NetSpa,Nafukovacie vírivky,Nafukovacie vírivky NetSpa",
+        "robots": "index, follow",
+        "msapplication-TileColor": "#FFFFFF",
+        "SKYPE_TOOLBAR": "SKYPE_TOOLBAR_PARSER_COMPATIBLE",
+        "al:ios:url": "alza://product/5347102",
+        "al:ios:app_store_id": "582287621",
+        "al:ios:app_name": "Alza.sk",
+        "og:image:width": "400",
+        "og:image:height": "300",
+        "fb:app_id": "138793332983682",
+        "application-name": "Alza.sk",
+        "msapplication-TileImage": "/images/alza-sk-win8.png",
+        "apple-itunes-app": "app-id=582287621",
+        "fb:admins": "",
+        "og:site_name": "Alza",
+        "og:title": "NetSpa MONTANA L  - Vírivka | Alza.sk",
+        "og:url": "https://www.alza.sk/hobby/netspa-montana-l-d5347102.htm",
+        "og:type": "product",
+        "og:description": "Parádny relax po náročnom dni? S vírivkou Netspa Montana L si ho doprajete aj každý deň. O dokonalú masáž sa postará 110 trysiek a vodu si môžete zahriať až na 42 °C. Vďaka okrúhlemu tvaru s menším priemerom ju umiestnite aj do menších priestorov. Perfektne sa hodí ako na záhradu, tak&nbsp;naprík",
+        "twitter:card": "summary_large_image",
+        "twitter:site": "@Alzacz",
+        "twitter:creator": "@Alzacz",
+        "twitter:title": "Vírivka NetSpa MONTANA L",
+        "twitter:description": "Parádny relax po náročnom dni? S vírivkou Netspa Montana L si ho doprajete aj každý deň. O dokonalú masáž sa postará 110 trysiek a vodu si môžete zahriať až na 42 °C. Vďaka okrúhlemu tvaru s menším pr",
+        "twitter:image": "https://cdn.alza.sk/Foto/f9_rect/HH/HHO009.jpg",
+        "og:image": "https://www.alza.sk/Styles/full/images/fb-logo-sk.jpg",
+        "title": "\n\tNetSpa MONTANA L  - Vírivka | Alza.sk\n"
+      },
+      "metadataInitial": {
+        "author": "Alza a.s.",
+        "description": "Vírivka NetSpa MONTANA L na www.alza.sk. ✅ Bezpečný nákup. ✅ Všetky informácie o produkte. ✅ Vhodné príslušenstvo. ✅ Hodnotenie a recenzie NetSpa MONTANA L od...",
+        "keywords": "NetSpa,MONTANA,L,Nafukovacie vírivky,Nafukovacie vírivky NetSpa,Nafukovacie vírivky,Nafukovacie vírivky NetSpa,Nafukovacie vírivky,Nafukovacie vírivky NetSpa",
+        "robots": "index, follow",
+        "msapplication-TileColor": "#FFFFFF",
+        "SKYPE_TOOLBAR": "SKYPE_TOOLBAR_PARSER_COMPATIBLE",
+        "al:ios:url": "alza://product/5347102",
+        "al:ios:app_store_id": "582287621",
+        "al:ios:app_name": "Alza.sk",
+        "og:image:width": "400",
+        "og:image:height": "300",
+        "fb:app_id": "138793332983682",
+        "application-name": "Alza.sk",
+        "msapplication-TileImage": "/images/alza-sk-win8.png",
+        "apple-itunes-app": "app-id=582287621",
+        "fb:admins": "",
+        "og:site_name": "Alza",
+        "og:title": "NetSpa MONTANA L  - Vírivka | Alza.sk",
+        "og:url": "https://www.alza.sk/hobby/netspa-montana-l-d5347102.htm",
+        "og:type": "product",
+        "og:description": "Parádny relax po náročnom dni? S vírivkou Netspa Montana L si ho doprajete aj každý deň. O dokonalú masáž sa postará 110 trysiek a vodu si môžete zahriať až na 42 °C. Vďaka okrúhlemu tvaru s menším priemerom ju umiestnite aj do menších priestorov. Perfektne sa hodí ako na záhradu, tak&nbsp;naprík",
+        "twitter:card": "summary_large_image",
+        "twitter:site": "@Alzacz",
+        "twitter:creator": "@Alzacz",
+        "twitter:title": "Vírivka NetSpa MONTANA L",
+        "twitter:description": "Parádny relax po náročnom dni? S vírivkou Netspa Montana L si ho doprajete aj každý deň. O dokonalú masáž sa postará 110 trysiek a vodu si môžete zahriať až na 42 °C. Vďaka okrúhlemu tvaru s menším pr",
+        "twitter:image": "https://cdn.alza.sk/Foto/f9_rect/HH/HHO009.jpg",
+        "og:image": "https://www.alza.sk/Styles/full/images/fb-logo-sk.jpg",
+        "title": "\n\tNetSpa MONTANA L  - Vírivka | Alza.sk\n"
+      },
+      "windowProperties": null,
+      "windowPropertiesInitial": null,
+      "xhrParsed": null,
+      "cookies": [
+        {
+          "name": "__uzma",
+          "value": "b4f1196c-4b74-4eb0-b85a-30718cfe9277",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1683205699.314473,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzmb",
+          "value": "1667480901",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1683205699.314601,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzmc",
+          "value": "972801053351",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1683205699.314623,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzmd",
+          "value": "1667480901",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1683205699.314636,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzme",
+          "value": "0542",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1683205699.314648,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "rdw_storereferer",
+          "value": "",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1683205699.314661,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "lb_id",
+          "value": "633f08b940e9be43e8999f2cf84599b7",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1667488099.390084,
+          "httpOnly": true,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "VZTX",
+          "value": "6358495419",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1699016899.314789,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "VST",
+          "value": "51e4b694-785b-ed11-9c81-0c42a19546d5",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1699016899.314807,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "CriticalCSS",
+          "value": "11804742",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1668085699.314824,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": ".AspNetCore.Culture",
+          "value": "c%3Dsk-SK%7Cuic%3Dsk-SK",
+          "domain": "www.alza.sk",
+          "path": "/",
+          "expires": 1699016899.390138,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__cf_bm",
+          "value": "I3FYT1j5ZmHf_80gc535GnLt4c8f2Z1csM6BEzlrQvA-1667480902-0-Ab1yWdrOr8lr7+GDq3GOHDF1vAJXxcpYiNwv/kcym/HZmu7sfpTv2Q9aIp3W0n6Kh36CO/JbujFFX2GDhBQ02Rk=",
+          "domain": ".alza.cz",
+          "path": "/",
+          "expires": 1667482699.769102,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "None"
+        },
+        {
+          "name": "__ssds",
+          "value": "2",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1683029300,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "NID",
+          "value": "511=oDbRjaenxGmYYrMw88Li67r6xLX4ncvSyiiE9YET8uaZm1lHVc3gpVrYeQih3vi707ij_3EF4Y97ie6yIBYJpq6Tnq0Oh-GuDDuDgaiPhjY4pFurnL7ySOsIjmGBxvCB0EyI-Izu51o528Jk_FT448Wxv6D7WNd7S9Ai7nMxTV8",
+          "domain": ".google.com",
+          "path": "/",
+          "expires": 1683292100.949917,
+          "httpOnly": true,
+          "secure": true,
+          "sameSite": "None"
+        },
+        {
+          "name": "__ssuzjsr2",
+          "value": "a9be0cd8e",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1683029301,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzmaj2",
+          "value": "d92e5128-e2ce-4820-a356-5687e4b522a4",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1683029301,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzmbj2",
+          "value": "1667480902",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1683029301,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzmcj2",
+          "value": "569421024534",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1683029301,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        },
+        {
+          "name": "__uzmdj2",
+          "value": "1667480902",
+          "domain": ".alza.sk",
+          "path": "/",
+          "expires": 1683029301,
+          "httpOnly": false,
+          "secure": false,
+          "sameSite": "Lax"
+        }
+      ],
+      "searchResults": []
+    },
+    "keywordConclusions": [
+      {
+        "Keyword": {
+          "original": "323,03",
+          "normalized": "323.03",
+          "index": 0
+        },
+        "SearchResults": {
+          "htmlFound": [],
+          "jsonFound": [
+            {
+              "path": [
+                "[1]",
+                "offers",
+                "price"
+              ],
+              "keyword": {
+                "original": "323,03",
+                "normalized": "323.03",
+                "index": 0
+              },
+              "textFound": "323.03",
+              "source": "initial",
+              "score": 0,
+              "textFoundValidation": "323.03"
+            }
+          ],
+          "schemaFound": [],
+          "metaFound": [],
+          "windowFound": [],
+          "xhrFound": []
+        }
+      },
+      {
+        "Keyword": {
+          "original": "Môžete mať zajtra",
+          "normalized": "Môžetemaťzajtra",
+          "index": 1
+        },
+        "SearchResults": {
+          "htmlFound": [],
+          "jsonFound": [],
+          "schemaFound": [],
+          "metaFound": [],
+          "windowFound": [],
+          "xhrFound": []
+        }
+      },
+      {
+        "Keyword": {
+          "original": "NetSpa MONTANA L",
+          "normalized": "NetSpaMONTANAL",
+          "index": 2
+        },
+        "SearchResults": {
+          "htmlFound": [],
+          "jsonFound": [
+            {
+              "path": [
+                "[1]",
+                "name"
+              ],
+              "keyword": {
+                "original": "NetSpa MONTANA L",
+                "normalized": "NetSpaMONTANAL",
+                "index": 2
+              },
+              "textFound": "NetSpa MONTANA L",
+              "source": "initial",
+              "score": 0,
+              "textFoundValidation": "NetSpa MONTANA L"
+            }
+          ],
+          "schemaFound": [],
+          "metaFound": [],
+          "windowFound": [],
+          "xhrFound": []
+        }
+      }
+    ]
+  }

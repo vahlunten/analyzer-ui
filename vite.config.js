@@ -17,4 +17,5 @@ export default defineConfig({
         outDir: 'build',
         target: 'es2019',
     },
+    publicDir: "public"
 })
