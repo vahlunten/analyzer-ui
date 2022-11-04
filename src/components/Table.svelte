@@ -7,8 +7,8 @@
     console.log(data);
 </script>
 
-<main class="max-w-full">
-    {#if data.length = 0}
+<main class="max-w-full mt-2">
+    {#if data.length == 0}
         <h2 class="text-lg font-semibold dark:text-white">
             No {title} was found for this keyword.
         </h2>
@@ -48,54 +48,5 @@
             </table>
         </div>
 
-        <!-- <div class="overflow-x-auto relative shadow-md rounded-tl-none rounded-lg">
-        <table
-            class="w-full text-sm text-left text-gray-700 dark:text-gray-400"
-        >
-            <thead class="text-sm text-gray-700 uppercase bg-gray-50">
-                <tr>
-                    <th scope="col" class="py-3 px-6"> Path </th>
-                    <th scope="col" class="py-3 px-6"> Text found </th>
-                    <th scope="col" class="py-3 px-6"> Text expected </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                >
-                    <td class="py-4 px-6"> Sliver </td>
-                    <td class="py-4 px-6"> Laptop </td>
-                    <td class="py-4 px-6"> $2999 </td>
-                </tr>
-                <tr
-                    class="m-4 bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                >
-                    <td class="py-4 px-8" colspan="4">
-                        Laptop
-                        <div style="--json-tree-font-size: 14px;">
-                        </div>
-
-                        mack
-                    </td>
-                </tr>
-                <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                >
-                    <td class="py-4 px-6"> Sliver </td>
-                    <td class="py-4 px-6"> Laptop </td>
-                    <td class="py-4 px-6"> $2999 </td>
-                </tr>
-                <tr
-                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                >
-                    <td class="py-4 px-6"> Sliver </td>
-                    <td class="py-4 px-6"> Laptop </td>
-                    <td class="py-4 px-6"> $2999 </td>
-                </tr>
-            </tbody>
-        </table>
-    </div> -->
-
-        pesok
     {/if}
 </main>

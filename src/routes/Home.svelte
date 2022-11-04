@@ -1,55 +1,40 @@
-<script context="module" lang="ts">
-    import { Tabs, TabItem } from 'flowbite-svelte'
+<script lang="ts">
     import Tabcontent from '../components/Tabcontent.svelte'
     // import JSONTree from 'svelte-json-tree'
     import type { Output } from '../types'
+    import { output } from '../stores/stores'
+    import MyTab from '../components/MyTab.svelte'
+    import MyTabList from '../components/MyTabList.svelte'
 
-    let analyzerOutput: Output
+    // let analyzerOutput: Output;
+    {
+        $output
+    }
+
     const fetchImage = (async () => {
         const response = await fetch('./OUTPUT.json')
-        analyzerOutput = (await response.json()) as Output
-        console.log(analyzerOutput);
-        return analyzerOutput;
+        output.set((await response.json()) as Output)
+        console.log(output)
+        return $output
     })()
-    const valuee = {
-        array: [1, 2, 3],
-        bool: true,
-        object: {
-            foo: 'bar',
-        },
-        nested: [
-            {
-                a: [1, '2', null, undefined],
-            },
-        ],
-    }
 </script>
 
-<main>
+<main class="m-4">
+    <!-- <div> {JSON.stringify($output)}</div> -->
     {#await fetchImage}
         <p>...waiting</p>
-    {:then data}
-        <!-- <JSONTree value={data} /> -->
-        <Tabs
-        style="pill"
-        defaultClass="m-4 flex "
-        contentClass=" m-4 bg-transparent"
-    >
+    {:then}
        
-        <!-- Conclusion tab -->
-        <TabItem open defaultClass="bg-gray-200" title="CONCLUSION">
-            <h1>AHOJ</h1>
-        </TabItem>
-        <!-- Keyword tabs -->
-        {#each analyzerOutput.keywordConclusions as keyConclusion}
-            <TabItem defaultClass="bg-gray-200" title={keyConclusion.Keyword.original.substring(0, 15)}>
-                <Tabcontent  title={keyConclusion.Keyword.original} content={keyConclusion.SearchResults}/>
-                pes
-            </TabItem>
+
+
+        <MyTabList keywords={$output.keywords}></MyTabList>
+        {#each $output.keywordConclusions as keyConclusion}
+
+        <MyTab>
+            <Tabcontent tabIndex={keyConclusion.Keyword.index} title={keyConclusion.Keyword.original} content={keyConclusion.SearchResults}/>
+        </MyTab>
         {/each}
-    </Tabs>
     {:catch error}
         <p>An error occurred!</p>
     {/await}
-
 </main>
