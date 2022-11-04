@@ -15,7 +15,7 @@
     {:else}
         <div class="bg-gray-50 inline-flex rounded-lg">
             <p
-                class="bg-gray-50 text-md p-6 py-3 width-auto text-xl font-semibold  rounded-lg rounded-b-none dark:text-white"
+                class="bg-gray-50 text-md p-6 py-3 width-auto font-semibold  rounded-lg rounded-b-none dark:text-white"
             >
                 {title}
             </p>

@@ -13,6 +13,7 @@
 
 <main >
     <div style="display: {tabIndex + 1 == $selectedTab? "block" : "none"}">
+        <img src="screenshot.jpeg" alt="screenshot from playwright"/>
         <Table title={"JsonLD data"} data={content.jsonFound}></Table>
     </div>
     

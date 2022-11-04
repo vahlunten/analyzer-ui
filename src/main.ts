@@ -2,7 +2,7 @@ import './app.postcss'
 import App from './App.svelte'
 
 if (import.meta.env.DEV) {
-    await import('./lib/hmr')
+    // await import('./lib/hmr')
 }
 
 const app = new App({
