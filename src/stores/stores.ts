@@ -1,4 +1,4 @@
-import type { Output } from 'src/types';
+import type { Output } from '@backend/types';
 import { writable } from 'svelte/store';
 
 export const output = writable<Output>();
@@ -11,4 +11,4 @@ export const output = writable<Output>();
 
 // }
 
-export const selectedTab = writable<number>(2);
+export const selectedTab = writable<number>(0);

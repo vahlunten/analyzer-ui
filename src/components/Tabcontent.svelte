@@ -1,8 +1,9 @@
 <script lang="ts">
-    import type { SearchResults } from "src/types"
+    import type { SearchResults } from '@backend/types'
     import { selectedTab } from "../stores/stores";
+    import { fade } from 'svelte/transition';
 
-    export let title:string;
+    export let title:string = "pes";
     export let content: SearchResults;
     export let tabIndex: number;
     import Table from "./Table.svelte";
@@ -12,9 +13,12 @@
 </script>
 
 <main >
-    <div style="display: {tabIndex + 1 == $selectedTab? "block" : "none"}">
-        <img src="screenshot.jpeg" alt="screenshot from playwright"/>
-        <Table title={"JsonLD data"} data={content.jsonFound}></Table>
+    <!-- <div class="transition-opacity duration-100 ease-out {$selectedTab == tabIndex ? "visible" : "invisible"}"> -->
+
+    <div style="display: {$selectedTab == tabIndex ? "block" : "none"}">
+        <slot>
+
+        </slot>
     </div>
     
 </main>

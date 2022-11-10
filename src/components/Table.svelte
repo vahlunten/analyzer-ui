@@ -1,5 +1,5 @@
 <script lang="ts">
-    import type { SearchResult } from 'src/types'
+    import type { SearchResult } from '@backend/src/types'
 
     export let title: string
     export let data: SearchResult[]
@@ -41,7 +41,7 @@
                         >
                             <td class="py-4 px-6"> {dataUnit.path.join('.')} </td>
                             <td class="py-4 px-6"> {dataUnit.textFound} </td>
-                            <td class="py-4 px-6"> ${dataUnit.textFoundValidation} </td>
+                            <td class="py-4 px-6"> {dataUnit.textFoundValidation} </td>
                         </tr>
                     {/each}
                 </tbody>
