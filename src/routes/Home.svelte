@@ -12,7 +12,6 @@
     {
         $output
     }
-
     const fetchImage = (async () => {
         const response = await fetch('./OUTPUT.json')
         output.set((await response.json()) as Output)
@@ -48,9 +47,12 @@
                 tabIndex={keyConclusion.Keyword.index + 1}
                 title={keyConclusion.Keyword.original}
                 content={keyConclusion.SearchResults}
-            >
+            >  
+            
+            <Table title={"HTML data"} data={keyConclusion.SearchResults.htmlFound}></Table>
             <Table title={"JsonLD data"} data={keyConclusion.SearchResults.jsonFound}></Table>
             <Table title={"Meta data"} data={keyConclusion.SearchResults.metaFound}></Table>
+
 
         </Tabcontent>
         {/each}

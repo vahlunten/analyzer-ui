@@ -39,7 +39,7 @@
                         <tr
                             class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
                         >
-                            <td class="py-4 px-6"> {dataUnit.path.join('.')} </td>
+                            <td class="py-4 px-6"> {dataUnit.path} </td>
                             <td class="py-4 px-6"> {dataUnit.textFound} </td>
                             <td class="py-4 px-6"> {dataUnit.textFoundValidation} </td>
                         </tr>
