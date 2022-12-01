@@ -11,4 +11,4 @@ export const output = writable<Output>();
 
 // }
 
-export const selectedTab = writable<number>(0);
+export const selectedTab = writable<number>(-1);

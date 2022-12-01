@@ -37,7 +37,7 @@
                 <tbody>
                     {#each data as dataUnit}
                         <tr
-                            class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+                            class="{dataUnit.textFound == dataUnit.textFoundValidation ? "bg-green-200" : "bg-red-200"} border-b dark:bg-gray-800 dark:border-gray-700"
                         >
                             <td class="py-4 px-6"> {dataUnit.path} </td>
                             <td class="py-4 px-6"> {dataUnit.textFound} </td>

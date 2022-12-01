@@ -4,7 +4,7 @@
     import { fade } from 'svelte/transition';
 
     export let title:string = "pes";
-    export let content: SearchResults;
+    export let content: SearchResults = null;
     export let tabIndex: number;
     import Table from "./Table.svelte";
 
