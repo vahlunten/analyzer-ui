@@ -13,7 +13,7 @@
     }
     const fetchImage = (async () => {
         const response = await fetch(
-            'OUTPUT.json',
+            './OUTPUT',
         )
         output.set((await response.json()) as Output)
         console.log(output)
@@ -56,7 +56,7 @@
                 in:fade={{ duration: 2000 }}
                 out:fade
                 class="max-w-xl py-2"
-                src="screenshot.jpeg"
+                src="./screenshot"
                 alt="screenshot from playwright"
             />
         </Tabcontent>

@@ -3,8 +3,8 @@
     import { selectedTab } from "../stores/stores";
     import { fade } from 'svelte/transition';
 
-    export let title:string = "pes";
-    export let content: SearchResults = null;
+    export const title:string = "pes";
+    export const content: SearchResults = null;
     export let tabIndex: number;
     import Table from "./Table.svelte";
 
