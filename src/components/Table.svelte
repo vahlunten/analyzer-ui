@@ -4,14 +4,14 @@
     export let title: string
     export let data: SearchResult[]
 
-    console.log(data);
+    // console.log(data);
 </script>
 
 <main class="max-w-full mt-2">
     {#if data.length == 0}
-        <h2 class="text-lg font-semibold dark:text-white">
+        <!-- <h2 class="text-lg font-semibold dark:text-white">
             No {title} was found for this keyword.
-        </h2>
+        </h2> -->
     {:else}
         <div class="bg-gray-50 inline-flex rounded-lg">
             <p

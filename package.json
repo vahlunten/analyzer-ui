@@ -10,6 +10,7 @@
         "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "dependencies": {
+        "svelte-icons-pack": "^2.0.0",
         "svelte-json-tree": "^1.0.0",
         "svelte-pathfinder": "^3.4.0"
     },
