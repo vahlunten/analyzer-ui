@@ -1,6 +1,8 @@
 <script lang="ts">
     import { path, prefs } from 'svelte-pathfinder'
     import routes from './routes'
+    // import '../app.css'
+    // import 'flowbite/dist/flowbite.css'
 
     // Disable side effects to only keep history in browser memory.
     prefs.sideEffect = false

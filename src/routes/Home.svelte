@@ -68,7 +68,7 @@
             <h2 class="text-md font-semibold text-gray-900">
                 Keywords:
                 {$output.keywords.map((keyword) => keyword.original)}
-                >
+                
             </h2>
             <img
                 in:fade={{ duration: 2000 }}
@@ -117,12 +117,10 @@
                 content={keyConclusion.SearchResults}
             >
 
-            <h2 class="text-md font-semibold text-gray-900">
+            <h2 class="text-md font-semibold text-gray-900 px-2">
                 Original keyword: {keyConclusion.Keyword.original}
             </h2>
-                <KeywordConclusionTable sources={keyConclusion.SearchResults}>
-
-                </KeywordConclusionTable>
+                <KeywordConclusionTable sources={keyConclusion.SearchResults}/>
                 <Table
                     title={'HTML data'}
                     data={keyConclusion.SearchResults.htmlFound}

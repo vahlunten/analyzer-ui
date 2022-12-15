@@ -21,7 +21,6 @@
             >{keyword.original.substring(0, 12) + "..."}</button
         >
     {/each}
-
     <button
         on:click={() => selectedTab.set(keywords.length)}
         type="button"

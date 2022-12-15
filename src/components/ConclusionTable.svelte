@@ -3,6 +3,7 @@
     import Icon from 'svelte-icons-pack/Icon.svelte';
     import VscCheck from "svelte-icons-pack/vsc/VscCheck";
     import VscClose from "svelte-icons-pack/vsc/VscClose";
+    import { each } from 'svelte/internal'
 
     export let sources: SearchResults;
 
@@ -48,28 +49,7 @@
 
                 <tr
                     class=" border-b dark:bg-gray-800 dark:border-gray-700"
-                >
-                <td class=" py-4 px-6 {sources.htmlFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
-                    {#if sources.htmlFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
-               </td>
-               <td class=" py-4 px-6 {sources.htmlFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
-                {#if sources.htmlFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
-                </td>
-                <td class=" py-4 px-6 {sources.jsonFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
-                    {#if sources.jsonFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
-                </td>
-
-                <td class=" py-4 px-6 {sources.schemaFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
-                    {#if sources.schemaFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
-               </td>
-               
-               <td class=" py-4 px-6 {sources.metaFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
-                {#if sources.metaFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
-               </td>
-               <td class=" py-4 px-6 {sources.xhrFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
-                {#if sources.xhrFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
-                </td>
-               
+                >            
 
 
                 </tr>

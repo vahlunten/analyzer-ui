@@ -13,19 +13,13 @@
     {#if sources == null}
        Failed validation?
     {:else}
-        <!-- <div class="bg-gray-50 rounded-lg">
+        <div class="bg-gray-50 inline-flex rounded-lg">
             <p
-                class="bg-gray-50 text-md p-6 py-3 font-semibold  rounded-lg rounded-b-none"
+                class="bg-gray-50 text-md px-3 pt-2 pb-1 font-semibold  rounded-lg rounded-b-none"
             >
                 Analysis results:
             </p>
-        </div> -->
-        
-        <p
-                class="max-w-fit bg-gray-50 text-md p-6 py-3 font-semibold  rounded-lg rounded-b-none"
-            >
-                Analysis results:
-            </p>
+        </div>
 
         <div
             class="overflow-x-auto relative shadow-md rounded-tl-none rounded-lg"
@@ -43,7 +37,7 @@
                         <th scope="col" class="py-3 px-6"> API / XHR </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody class="text-center">
 
                 <tr
                     class=" border-b dark:bg-gray-800 dark:border-gray-700"
@@ -54,7 +48,7 @@
                <td class=" py-4 px-6 {sources.htmlFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
                 {#if sources.htmlFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
                 </td>
-                <td class=" py-4 px-6 {sources.jsonFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
+                <td class="py-4 px-6 {sources.jsonFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
                     {#if sources.jsonFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
                 </td>
 
