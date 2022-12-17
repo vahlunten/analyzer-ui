@@ -7,6 +7,7 @@
     import Navbar from '../components/MyTabList.svelte'
     import { fade, fly } from 'svelte/transition'
     import KeywordConclusionTable from '../components/KeywordConclusionTable.svelte'
+    import SelectorTable from '../components/SelectorTable.svelte'
 
     // let analyzerOutput: Output;
     {
@@ -77,7 +78,10 @@
                 src="./screenshot"
                 alt="screenshot from playwright"
             />
-
+            <SelectorTable
+            title={'HTML data'}
+            data={$output.keywordConclusions[0].SearchResults.htmlFound}
+        />
             <div class="flex items-center mb-4">
                 <input
                     id="default-radio-1"
@@ -137,6 +141,7 @@
                     title={'Schema.org data'}
                     data={keyConclusion.SearchResults.schemaFound}
                 />
+                
             </Tabcontent>
         {/each}
 
@@ -193,4 +198,42 @@
     {:catch error}
         <p>An error occurred!</p>
     {/await}
+
+    
+<!-- <h2>Size</h2> -->
+
+<!-- <label>
+	<input type=radio bind:group={scoops} name="scoops" value={1}>
+	One scoop
+</label>
+
+<label>
+	<input type=radio bind:group={scoops} name="scoops" value={2}>
+	Two scoops
+</label>
+
+<label>
+	<input type=radio bind:group={scoops} name="scoops" value={3}>
+	Three scoops
+</label>
+
+<h2>Flavours</h2>
+
+{#each menu as flavour}
+	<label>
+		<input type=checkbox bind:group={flavours} name="flavours" value={flavour}>
+		{flavour}
+	</label>
+{/each}
+
+{#if flavours.length === 0}
+	<p>Please select at least one flavour</p>
+{:else if flavours.length > scoops}
+	<p>Can't order more flavours than scoops!</p>
+{:else}
+	<p>
+		You ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}
+		of {join(flavours)}
+	</p>
+{/if} -->
 </main>
