@@ -5,9 +5,10 @@
     import { output } from '../stores/stores'
     import Table from '../components/Table.svelte'
     import Navbar from '../components/MyTabList.svelte'
-    import { fade, fly } from 'svelte/transition'
     import KeywordConclusionTable from '../components/KeywordConclusionTable.svelte'
     import SelectorTable from '../components/SelectorTable.svelte'
+    import Overview from '../components/Overview.svelte'
+    import XhrDetail from '../components/XhrDetail.svelte'
 
     // let analyzerOutput: Output;
     {
@@ -56,7 +57,7 @@
 
         <!-- CONCLUSION tab -->
         <Tabcontent tabIndex={-1}>
-            <h2 class="text-md font-semibold text-gray-900">
+            <!-- <h2 class="text-md font-semibold text-gray-900">
                 Analysed url: <u
                     ><a
                         class="font-normal"
@@ -70,19 +71,20 @@
                 Keywords:
                 {$output.keywords.map((keyword) => keyword.original)}
                 
-            </h2>
-            <img
+            </h2> -->
+            <Overview out={$output} />
+            <!-- <img
                 in:fade={{ duration: 2000 }}
                 out:fade
                 class="max-w-xl py-2"
                 src="./screenshot"
                 alt="screenshot from playwright"
-            />
+            /> -->
             <SelectorTable
-            title={'HTML data'}
-            data={$output.keywordConclusions[0].SearchResults.htmlFound}
-        />
-            <div class="flex items-center mb-4">
+                title={'HTML data'}
+                data={$output.keywordConclusions[0].SearchResults.htmlFound}
+            />
+            <!-- <div class="flex items-center mb-4">
                 <input
                     id="default-radio-1"
                     type="radio"
@@ -110,21 +112,18 @@
                     class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
                     >Checked state</label
                 >
-            </div>
+            </div> -->
         </Tabcontent>
         <!-- Keywords tabs -->
         {#each $output.keywordConclusions as keyConclusion}
-            
-        
             <Tabcontent
                 tabIndex={keyConclusion.Keyword.index}
                 content={keyConclusion.SearchResults}
             >
-
-            <h2 class="text-md font-semibold text-gray-900 px-2">
-                Original keyword: {keyConclusion.Keyword.original}
-            </h2>
-                <KeywordConclusionTable sources={keyConclusion.SearchResults}/>
+                <h2 class="text-md font-semibold text-gray-900 px-2">
+                    Original keyword: {keyConclusion.Keyword.original}
+                </h2>
+                <KeywordConclusionTable sources={keyConclusion.SearchResults} />
                 <Table
                     title={'HTML data'}
                     data={keyConclusion.SearchResults.htmlFound}
@@ -141,68 +140,22 @@
                     title={'Schema.org data'}
                     data={keyConclusion.SearchResults.schemaFound}
                 />
-                
             </Tabcontent>
         {/each}
-
         <!-- Xhr tab -->
         <!-- CONCLUSION tab -->
         <Tabcontent tabIndex={$output.keywordConclusions.length}>
-            <!-- <h2 class="text-lg font-semibold text-gray-900">
-                Analysed url: <u
-                    ><a target="_blank" rel="noreferrer" href={$output.url}>{$output.url}</a></u
-                >
-            </h2>
-            <h2 class="text-lg font-semibold text-gray-900">
-                Keywords: 
-                    {$output.keywords.map((keyword) => keyword.original)}
-                >
-            </h2>
-            <img
-                in:fade={{ duration: 2000 }}
-                out:fade
-                class="max-w-xl py-2"
-                src="./screenshot"
-                alt="screenshot from playwright"
-            /> -->
-            <div class="flex items-center mb-4">
-                <input
-                    id="default-radio-1"
-                    type="radio"
-                    value=""
-                    name="default-radio"
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                    for="default-radio-1"
-                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >Default radio</label
-                >
-            </div>
-            <div class="flex items-center">
-                <input
-                    checked
-                    id="default-radio-2"
-                    type="radio"
-                    value=""
-                    name="default-radio"
-                    class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-                />
-                <label
-                    for="default-radio-2"
-                    class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-                    >Checked state</label
-                >
-            </div>
+            {#each $output.xhrValidated as xhr}
+                <XhrDetail validatedXhr={xhr} />
+            {/each}
         </Tabcontent>
     {:catch error}
         <p>An error occurred!</p>
     {/await}
 
-    
-<!-- <h2>Size</h2> -->
+    <!-- <h2>Size</h2> -->
 
-<!-- <label>
+    <!-- <label>
 	<input type=radio bind:group={scoops} name="scoops" value={1}>
 	One scoop
 </label>

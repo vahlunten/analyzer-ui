@@ -1,9 +1,5 @@
 <script lang="ts">
     import type { SearchResults } from '@backend/src/types'
-    import Icon from 'svelte-icons-pack/Icon.svelte';
-    import VscCheck from "svelte-icons-pack/vsc/VscCheck";
-    import VscClose from "svelte-icons-pack/vsc/VscClose";
-    import { each } from 'svelte/internal'
 
     export let sources: SearchResults;
 
@@ -34,7 +30,7 @@
             <table
                 class="max-w-full text-sm text-center text-gray-700 dark:text-gray-400"
             >
-                <thead class="text-sm text-gray-700 uppercase bg-gray-50 text-right">
+                <thead class="text-sm  text-gray-700 uppercase bg-gray-50 text-center">
                     <tr>
                         <th scope="col" class="py-3 px-6"> Keyword </th>
                         <th scope="col" class="py-3 px-6"> HTML </th>
