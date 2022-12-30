@@ -9,25 +9,38 @@
     import Overview from '../components/Overview.svelte'
     import XhrDetail from '../components/XhrDetail.svelte'
     import Spinner from '../components/Spinner.svelte'
+    import VscRefresh from "svelte-icons-pack/vsc/VscRefresh";
+    import Icon from 'svelte-icons-pack/Icon.svelte';
+    import Alert from '../components/Alert.svelte'
+
+    
     {
         $output
     }
+    
     const fetchImage = (async () => {
-        const response = await fetch('./OUTPUT')
+        const response = await fetch(import.meta.env.PROD? './OUTPUT': './OUTPUT.json')
         output.set((await response.json()) as Output)
         console.log(output)
-        return $output
     })();
 
 </script>
+<svelte:head>
+  <link rel="icon" type="image/png" href={"../../public/favicon-32x32.png"} />
+</svelte:head>
 
 <main class="m-4">
     {#await fetchImage}
       <Spinner/>
     {:then}
-        <Navbar keywords={$output.keywords} />
+    <!-- {console.log("Devmode?: " + )} -->
+    <!-- <button on:click={async () => await fetchImage} class="">
+        <Icon src={VscRefresh}/>
+    </button> -->
+        <Navbar refreshHandler={fetchImage} keywords={$output.keywords} />
         <!-- CONCLUSION tab -->
         <Tabcontent tabIndex={-1}>
+            <Alert error ={true} text={"Cheeriocrawler failed to load the initial response."}></Alert>
             <Overview out={$output} />
             <SelectorTable
                 title={'HTML data'}
@@ -68,6 +81,7 @@
                 <XhrDetail validatedXhr={xhr} />
             {/each}
         </Tabcontent>
+        
     {:catch error}
         <p>An error has okurek!</p>
     {/await}

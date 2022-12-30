@@ -33,7 +33,9 @@
                         <th scope="col" class="py-3 px-6"> Path </th>
                         <th scope="col" class="py-3 px-6"> Short path </th>
                         <th scope="col" class="py-3 px-6"> Text found during analysis </th>
-                        <th scope="col" class="py-3 px-6"> Text found in initial response</th>
+                        <th scope="col" class="py-3 px-6"> Text found validation</th>
+                        <th scope="col" class="py-3 px-6"> Text found validation short</th>
+
                         <th scope="col" class="py-3 px-6">
                             <!-- <div id="disable-arrow">
                                 Source
@@ -54,10 +56,12 @@
                                 ? 'bg-green-200'
                                 : 'bg-red-200'} border-b dark:bg-gray-800 dark:border-gray-700"
                         >
-                            <td class="py-4 px-6"> {dataUnit.pathShort} </td>
                             <td class="py-4 px-6"> {dataUnit.path} </td>
+                            <td class="py-4 px-6"> {dataUnit.pathShort} </td>
                             <td class="py-4 px-6"> {dataUnit.textFound} </td>
                             <td class="py-4 px-6"> {dataUnit.textFoundValidation} </td>
+                            <td class="py-4 px-6"> {dataUnit.textFoundValidationShort} </td>
+
                             <td class="py-4 px-6  w-auto"> {dataUnit.source} </td>
                             <td class="py-4 px-6  w-auto"> {dataUnit.score} </td>
 

@@ -17,5 +17,5 @@ export default defineConfig({
         outDir: 'build',
         target: 'es2019',
     },
-    publicDir: "public"
+    publicDir: "../analyzer-ts/storage/key_value_stores/default"
 })
