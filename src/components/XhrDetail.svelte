@@ -17,7 +17,7 @@
     // keywords found
 </script>
 
-<main class="mt-2 max-w-fit">
+<main class="mt-2 max-w-full">
     {#if validatedXhr == null}
         Failed validation?
     {:else}
@@ -25,7 +25,7 @@
             class="flex align-center overflow-x-auto relative shadow-md rounded-lg bg-white"
         >
             <table
-                class="mx-6 float-left bg-white max-w-full text-sm text-left text-gray-700"
+                class="mx-6 float-left bg-white full text-sm text-left text-gray-700"
             >
                 <tbody>
                     <tr class=" border-b">
@@ -35,10 +35,6 @@
                                 .url}</td
                         >
                     </tr>
-                    <!-- <tr class=" border-b">
-        <td class=" py-4 px-6 font-semibold"> Keywords: </td>
-        <td class=" py-4 px-6 "> {out.keywords.map((keyword) => keyword.original)} </td>
-    </tr> -->
                     <tr class=" border-b">
                         <td class=" py-4 font-semibold"> Method </td>
                         <td class=" py-4 ">
@@ -63,36 +59,67 @@
                         <td class=" py-4  pr-12 font-semibold">
                             Validation result
                         </td>
-                        <td class=" py-4  "> Success </td>
+                        <td class=" py-4  ">
+                            {validatedXhr.validationSuccess}
+                        </td>
                     </tr>
                     <tr class=" border-b">
                         <td class=" py-4  pr-12 font-semibold">
                             Original request headers
                         </td>
-                        <td class=" py-4  "> 
-                        
-                            <JSONTree value={validatedXhr.originalRequestResponse.request.headers}>
-
-                            </JSONTree>
+                        <td class=" py-4  ">
+                            <JSONTree
+                                value={validatedXhr.originalRequestResponse
+                                    .request.headers}
+                            />
                         </td>
                     </tr>
                     <tr class=" border-b">
                         <td class=" py-4  pr-12 font-semibold">
                             Original response headers
                         </td>
-                        <td class=" py-4  "> 
-                        
-                            <JSONTree value={validatedXhr.originalRequestResponse.response.headers} >
-
-                            </JSONTree>
+                        <td class=" py-4  ">
+                            <JSONTree
+                                value={validatedXhr.originalRequestResponse
+                                    .response.headers}
+                            />
                         </td>
                     </tr>
-                    <!-- <tr class=" border-b">
-        <td class=" py-4  font-semibold">
-            Analysed ended:
-        </td>
-        <td class=" py-4  "> {out.analysisEnded} </td>
-    </tr> -->
+
+                    <tr class=" border-b">
+                        <td class=" py-4  pr-12 font-semibold">
+                            Request body:
+                        </td>
+
+                        <td class=" py-4  ">
+                            <JSONTree
+                                value={JSON.stringify(
+                                    validatedXhr.originalRequestResponse.request
+                                        .body,
+                                    null,
+                                    3,
+                                )}
+                            />
+                        </td>
+                    </tr>
+
+                    <tr class=" border-b">
+                        <td class=" py-4  pr-12 font-semibold">
+                            Response body:
+                        </td>
+
+                        <td class="py-4  ">
+                            {#if validatedXhr.originalRequestResponse.response.headers['content-type'].indexOf('json') != -1}
+                                <JSONTree
+                                    defaultExpandedLevel={3}
+                                    value={JSON.parse(
+                                        validatedXhr.originalRequestResponse
+                                            .response.body,
+                                    )}
+                                />
+                            {/if}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

@@ -35,6 +35,8 @@
                         <th scope="col" class="py-3 px-6"> Schema.org </th>
                         <th scope="col" class="py-3 px-6"> Metadata </th>
                         <th scope="col" class="py-3 px-6"> API / XHR </th>
+                        <th scope="col" class="py-3 px-6"> Window </th>
+
                     </tr>
                 </thead>
                 <tbody class="text-center">
@@ -62,6 +64,10 @@
                <td class=" py-4 px-6 {sources.xhrFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
                 {#if sources.xhrFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
                 </td>
+
+                <td class=" py-4 px-6 {sources.windowFound.length > 0 ? "bg-green-200" : "bg-red-200"}">
+                    {#if sources.xhrFound.length > 0 } <Icon src={VscCheck}/> {:else} <Icon src={VscClose}/> {/if}
+                    </td>
                
 
 

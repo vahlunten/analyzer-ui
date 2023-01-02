@@ -4,16 +4,14 @@
 
     export let title: string
     export let data: SearchResult[]
+    export let debug: boolean
+    export let validated:boolean;
 
     // console.log(data);
 </script>
 
 <main class="max-w-full mt-2">
-    {#if data.length == 0}
-        <!-- <h2 class="text-lg font-semibold dark:text-white">
-            No {title} was found for this keyword.
-        </h2> -->
-    {:else}
+    {#if data.length > 0}
         <div class="bg-gray-50 inline-flex rounded-lg">
             <p
                 class="bg-gray-50 text-md px-3 pt-2 pb-1 width-auto font-semibold rounded-lg rounded-b-none"
@@ -30,22 +28,25 @@
             >
                 <thead class="text-sm text-gray-700 uppercase bg-gray-50">
                     <tr>
+                        {#if debug}
+                            <th scope="col" class="py-3 px-6"> Long Path </th>
+                        {/if}
                         <th scope="col" class="py-3 px-6"> Path </th>
-                        <th scope="col" class="py-3 px-6"> Short path </th>
-                        <th scope="col" class="py-3 px-6"> Text found during analysis </th>
-                        <th scope="col" class="py-3 px-6"> Text found validation</th>
-                        <th scope="col" class="py-3 px-6"> Text found validation short</th>
-
                         <th scope="col" class="py-3 px-6">
-                            <!-- <div id="disable-arrow">
-                                Source
-                                <Tooltip triggeredBy="#disable-arrow">
-                                    Tooltip content
-                                </Tooltip>
-                            </div> -->
-                            Source
+                            Text found during analysis
                         </th>
-                        <th scope="col" class="py-3 px-6"> Score </th>
+                        <th scope="col" class="py-3 px-6">
+                            Text found validation</th
+                        >
+                        {#if debug}
+                            <th scope="col" class="py-3 px-6">
+                                Text found validation short</th
+                            >
+                        {/if}
+                        <th scope="col" class="py-3 px-6"> Source </th>
+                        {#if debug}
+                            <th scope="col" class="py-3 px-6"> Score </th>
+                        {/if}
                     </tr>
                 </thead>
                 <tbody>
@@ -56,15 +57,28 @@
                                 ? 'bg-green-200'
                                 : 'bg-red-200'} border-b dark:bg-gray-800 dark:border-gray-700"
                         >
-                            <td class="py-4 px-6"> {dataUnit.path} </td>
+                            {#if debug}
+                                <td class="py-4 px-6"> {dataUnit.path} </td>
+                            {/if}
                             <td class="py-4 px-6"> {dataUnit.pathShort} </td>
                             <td class="py-4 px-6"> {dataUnit.textFound} </td>
-                            <td class="py-4 px-6"> {dataUnit.textFoundValidation} </td>
-                            <td class="py-4 px-6"> {dataUnit.textFoundValidationShort} </td>
+                            {#if debug}
+                                <td class="py-4 px-6">
+                                    {dataUnit.textFoundValidation}
+                                </td>
+                            {/if}
+                            <td class="py-4 px-6">
+                                {dataUnit.textFoundValidationShort}
+                            </td>
 
-                            <td class="py-4 px-6  w-auto"> {dataUnit.source} </td>
-                            <td class="py-4 px-6  w-auto"> {dataUnit.score} </td>
-
+                            <td class="py-4 px-6  w-auto">
+                                {dataUnit.source}
+                            </td>
+                            {#if debug}
+                                <td class="py-4 px-6  w-auto">
+                                    {dataUnit.score}
+                                </td>
+                            {/if}
                         </tr>
                     {/each}
                 </tbody>
