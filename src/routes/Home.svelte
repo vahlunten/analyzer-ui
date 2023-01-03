@@ -5,6 +5,8 @@
     import Navbar from '../components/MyTabList.svelte'
     import KeywordConclusionTable from '../components/KeywordConclusionTable.svelte'
     import SelectorTable from '../components/SelectorTable.svelte'
+    import ResultsTable from '../components/ResultsTable.svelte'
+
     import Overview from '../components/Overview.svelte'
     import XhrDetail from '../components/XhrDetail.svelte'
     import Spinner from '../components/Spinner.svelte'
@@ -59,10 +61,11 @@
                 actorSuccess={$output.actorSuccess}
                 out={$output}
             />
-            <!-- <SelectorTable
-                title={'HTML data'}
-                data={$output.keywordConclusions[0].SearchResults.htmlFound}
-            /> -->
+            <ResultsTable
+                title={'Analysis results'}
+                keywordConclusions={$output.keywordConclusions}
+               />
+
         </Tabcontent>
 
         <!-- If the actor execution finished sucessfully display the data. -->
