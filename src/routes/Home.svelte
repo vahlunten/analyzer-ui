@@ -30,7 +30,7 @@
         output.set((await response.json()) as Output)
         // console.log(output);
     })()
-    const debugMode = false
+    const debugMode = true
     const validationSuccess = true
 </script>
 
@@ -109,8 +109,8 @@
                     <!-- Window properties are never validated -->
                     <Table
                         validated={false}
-                        debug={debugMode}
-                        title={'Window properties'}
+                        debug={false}
+                        title={'Window properties - not validated'}
                         data={keyConclusion.SearchResults.windowFound}
                     />
                 </Tabcontent>

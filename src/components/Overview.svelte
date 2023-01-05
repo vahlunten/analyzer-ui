@@ -72,16 +72,6 @@
                             {/if}
                         </td>
                     </tr>
-                    <tr class=" border-b">
-                        <td class=" py-4  font-semibold"> Result </td>
-                        <td class=" my-2 ">
-                            <div class="rounded-lg p-2 bg-green-200 inline">
-                                <!-- TODO: final result -->
-                                Can be scraped with a simple HTTP client
-                                <!-- Can be scraped using a browser -->
-                            </div>
-                        </td>
-                    </tr>
                 {:else}
                     <tr class=" border-b">
                         <td class=" py-4  font-semibold"> Error </td>

@@ -1,20 +1,8 @@
 <script lang="ts">
-    import type { Output, XhrValidation } from '@backend/src/types'
+    import type { XhrValidation } from '@backend/*'
     import JSONTree from 'svelte-json-tree'
 
-    export let validatedXhr: XhrValidation
-    // url
-    // original response status
-    // method
-    // payload
-    // validation result
-
-    // call with minimal headers
-    // response status
-    // validation success
-    // call with original headers without cookie
-    // call with full headers
-    // keywords found
+    export let validatedXhr: XhrValidation;
 </script>
 
 <main class="mt-2 max-w-full">
@@ -45,7 +33,7 @@
                 </tr>
                 <tr class=" border-b">
                     <td class=" py-4  pr-12 font-semibold"> Keywords found </td>
-                    <td class=" py-4  "> {validatedXhr.originalRequestResponse} </td>
+                    <td class=" py-4  "> {validatedXhr.callWithCookies.length > 0 ? validatedXhr.callWithCookies[validatedXhr.callWithCookies.length - 1].searchResults.map(x =>  { return x.keyword.original}).join(', ') : []}</td>
                 </tr>
                 <tr class=" border-b">
                     <td class=" py-4  pr-12 font-semibold">
@@ -95,7 +83,6 @@
 
                 <tr class=" border-b">
                     <td class=" py-4  pr-12 font-semibold"> Response body: </td>
-
                     <td class="py-4  ">
                         {#if validatedXhr.originalRequestResponse.response.headers['content-type'].indexOf('json') != -1}
                             <JSONTree
@@ -105,6 +92,8 @@
                                         .response.body,
                                 )}
                             />
+                        {:else if validatedXhr.originalRequestResponse.response.headers['content-type'].indexOf('html') != -1}
+                        {validatedXhr.originalRequestResponse.response.body}
                         {/if}
                     </td>
                 </tr>
