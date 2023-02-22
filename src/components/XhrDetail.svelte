@@ -1,8 +1,9 @@
 <script lang="ts">
     import type { XhrValidation } from '@backend/*'
     import JSONTree from 'svelte-json-tree'
+    import pretty from 'pretty'
 
-    export let validatedXhr: XhrValidation;
+    export let validatedXhr: XhrValidation
 </script>
 
 <main class="mt-2 max-w-full">
@@ -33,7 +34,21 @@
                 </tr>
                 <tr class=" border-b">
                     <td class=" py-4  pr-12 font-semibold"> Keywords found </td>
-                    <td class=" py-4  "> {validatedXhr.callWithCookies.length > 0 ? validatedXhr.callWithCookies[validatedXhr.callWithCookies.length - 1].searchResults.map(x =>  { return x.keyword.original}).join(', ') : []}</td>
+                    <td class=" py-4  ">
+                        {validatedXhr.callWithCookies.length > 0
+                            ? validatedXhr.callWithCookies[
+                                  validatedXhr.callWithCookies.length - 1
+                              ].searchResults
+                                  .map((x) => {
+                                      return x.keyword.original
+                                  })
+                                  .filter(
+                                      (value, index, array) =>
+                                          array.indexOf(value) === index,
+                                  )
+                                  .join(', ')
+                            : []}</td
+                    >
                 </tr>
                 <tr class=" border-b">
                     <td class=" py-4  pr-12 font-semibold">
@@ -93,7 +108,17 @@
                                 )}
                             />
                         {:else if validatedXhr.originalRequestResponse.response.headers['content-type'].indexOf('html') != -1}
-                        {validatedXhr.originalRequestResponse.response.body}
+                            <div class="max-h-96 overflow-x-clip overflow-y-scroll">
+                                <pre>
+                                    <code>
+                                            {
+                                            pretty(validatedXhr.originalRequestResponse.response.body,{ ocd: true },
+                                            )
+                                        }
+    
+                                    </code>
+                                </pre>
+                            </div>
                         {/if}
                     </td>
                 </tr>

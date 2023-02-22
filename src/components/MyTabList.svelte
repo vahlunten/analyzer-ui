@@ -37,5 +37,14 @@
                 : 'bg-white'} text-black hover:bg-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
             >XHR</button
         >
+
+        <button
+            on:click={() => selectedTab.set(keywords.length + 1)}
+            type="button"
+            class="{$selectedTab == keywords.length
+                ? 'bg-blue-400'
+                : 'bg-white'} text-black hover:bg-blue-100 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2"
+            >Initial diff</button
+        >
     {/if}
 </main>

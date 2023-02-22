@@ -1,6 +1,6 @@
 <script lang="ts">
     import Tabcontent from '../components/Tabcontent.svelte'
-    import { output } from '../stores/stores'
+    import { output, initialResponseStore } from '../stores/stores'
     import Table from '../components/Table.svelte'
     import Navbar from '../components/MyTabList.svelte'
     import KeywordConclusionTable from '../components/KeywordConclusionTable.svelte'
@@ -10,11 +10,17 @@
     import Overview from '../components/Overview.svelte'
     import XhrDetail from '../components/XhrDetail.svelte'
     import Spinner from '../components/Spinner.svelte'
-    import VscRefresh from 'svelte-icons-pack/vsc/VscRefresh'
-    import Icon from 'svelte-icons-pack/Icon.svelte'
     import Alert from '../components/Alert.svelte'
 
+    // TODO:
+    // ISSUES with front end:
+    // buggy  when the output file from the analyzer is damaged 
+    // fix formatting of long strings like json response
+    // experience on the localhost is not perfect
+    // save last viewed to the localstorage
+
     import type { Output } from '@backend/types'
+    import Diff from '../components/Diff.svelte'
 
     // make $output store reactive
     {
@@ -28,6 +34,15 @@
             import.meta.env.PROD ? './OUTPUT' : './OUTPUT.json',
         )
         output.set((await response.json()) as Output)
+
+        const initialResponse = await fetch(
+            // in the Apify platform, files are saved without file extension
+            import.meta.env.PROD ? './diff' : './diff.bin',
+            // import.meta.env.PROD ? './OUTPUT' : './OUTPUT.json',
+        )
+        initialResponseStore.set(await initialResponse.text());
+        console.log($initialResponseStore);
+
         // console.log(output);
     })()
     const debugMode = true
@@ -126,6 +141,12 @@
                         <XhrDetail validatedXhr={xhr} />
                     {/each}
                 {/if}
+            </Tabcontent>
+
+            <!-- Initial response vs rendered diff -->
+            <Tabcontent tabIndex={$output.keywordConclusions.length + 1}>
+                <!-- TODO:  -->
+               <Diff diff2html={$initialResponseStore}></Diff>
             </Tabcontent>
         {/if}
     {:catch error}

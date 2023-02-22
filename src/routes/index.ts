@@ -4,6 +4,7 @@ import Test from './test.svelte';
 
 const routes = {
     '/': Home,
+    // TODO: add route for browsing recent search results? 
     '/test': Test
 }
 

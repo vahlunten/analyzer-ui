@@ -4,6 +4,7 @@ module.exports = {
     content: [
         './index.html',
         './src/**/*.{js,svelte,ts}',
+        // TODO: remove flowbite js? 
         './node_modules/flowbite-svelte/**/*.{html,js,svelte,ts}'],
     theme: {
         screens: {
@@ -14,6 +15,7 @@ module.exports = {
         extend: {},
     },
     variants: {},
+    // TODO: remove flowbite plugin?
     plugins: [require('flowbite/plugin')],
     darkMode: 'class'
 }
