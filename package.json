@@ -10,6 +10,7 @@
         "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "dependencies": {
+        "cheerio": "^1.0.0-rc.12",
         "pretty": "^2.0.0",
         "svelte-icons-pack": "^2.0.0",
         "svelte-json-tree": "^1.0.0",
@@ -24,7 +25,6 @@
         "classnames": "^2.3.2",
         "dotenv": "^16.0.3",
         "flowbite": "^1.5.5",
-        "flowbite-svelte": "^0.27.17",
         "fs-extra": "^10.1.0",
         "pagecrypt": "^5.4.0",
         "postcss": "^8.4.14",

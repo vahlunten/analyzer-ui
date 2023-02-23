@@ -1,6 +1,5 @@
 <script lang="ts">
     import type { SearchResult } from '@backend/src/types'
-    import { Tooltip, Button } from 'flowbite-svelte'
 
     export let title: string
     export let data: SearchResult[]
