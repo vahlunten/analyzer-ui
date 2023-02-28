@@ -1,10 +1,12 @@
-import type { Output } from '@backend/types';
+import type { Output, CrawlerConfig } from '@backend/types';
 import { writable } from 'svelte/store';
 
 export const output = writable<Output>();
 export const initialResponseStore = writable<string>();
 export const diffString = writable<string>();
 export const runsList = writable<string>();
+export const selectedSelectors = writable<CrawlerConfig>();
+
 
 // export const outputStore = {
 //     subscribe: output.subscribe,
@@ -15,3 +17,4 @@ export const runsList = writable<string>();
 // }
 
 export const selectedTab = writable<number>(-1);
+

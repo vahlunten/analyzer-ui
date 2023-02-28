@@ -7,7 +7,7 @@
 
         const initialResponse = await fetch(
             // in the Apify platform, files are saved without file extension
-            'http://127.0.0.1:8080/runs/',
+            'http://127.0.0.1:8080/',
 
             // import.meta.env.PROD ? './OUTPUT' : './OUTPUT.json',
         )
@@ -16,9 +16,9 @@
         console.log($runsList);
         cheerioObject("a").each((index, element) => {
             // http://127.0.0.1:8080/runs/2023-02-23_14-09-14/DASHBOARD.html
-            const newHref =  "http://127.0.0.1:8080/runs/" + cheerioObject(element).text() + "DASHBOARD.html";
+            const newHref =  "http://127.0.0.1:8080/" + cheerioObject(element).text() + "DASHBOARD.html";
             cheerioObject(element).attr("href", newHref);
-            console.log("macka")
+            console.log("New href: " + newHref);
         });
         $runsList = cheerioObject.html();
     })()

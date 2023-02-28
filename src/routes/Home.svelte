@@ -1,6 +1,6 @@
 <script lang="ts">
     import Tabcontent from '../components/Tabcontent.svelte'
-    import { output, initialResponseStore } from '../stores/stores'
+    import { output, initialResponseStore, selectedSelectors } from '../stores/stores'
     import Table from '../components/Table.svelte'
     import Navbar from '../components/MyTabList.svelte'
     import KeywordConclusionTable from '../components/KeywordConclusionTable.svelte'
@@ -17,7 +17,7 @@
     // experience on the localhost is not perfect
     // save last viewed to the localstorage
 
-    import type { Output } from '@backend/types'
+    import type { CrawlerConfig, Output } from '@backend/types'
     import Diff from '../components/Diff.svelte'
 
     // make $output store reactive
@@ -29,17 +29,20 @@
     const fetchImage = (async () => {
         const response = await fetch(
             // in the Apify platform, files are saved without file extension
-            './OUTPUT.json',
+            import.meta.env.PROD ? './OUTPUT' : './OUTPUT.json',
         )
         output.set((await response.json()) as Output)
+        
+        const defaultSelectors: CrawlerConfig = {keywordSelectors: []};
+        $selectedSelectors = defaultSelectors;
 
+        // fetch the diff
         const initialResponse = await fetch(
-            // in the Apify platform, files are saved without file extension
-            './diff.bin',
-            // import.meta.env.PROD ? './OUTPUT' : './OUTPUT.json',
+            // './diff.bin',
+            import.meta.env.PROD ? './diff' : './diff.bin',
         )
         initialResponseStore.set(await initialResponse.text());
-        console.log($initialResponseStore);
+        // console.log($initialResponseStore);
 
         // console.log(output);
     })()
