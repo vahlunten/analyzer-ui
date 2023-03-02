@@ -129,6 +129,10 @@
                         title={'Window properties - not validated'}
                         data={keyConclusion.SearchResults.windowFound}
                     />
+
+                    {#each keyConclusion.ValidatedXhr as xhr}
+                        <XhrDetail validatedXhr={xhr} />
+                    {/each}
                 </Tabcontent>
             {/each}
             <!-- Xhr validation tab -->
