@@ -43,7 +43,15 @@
                 <tr class=" border-b">
                     <td class=" py-4  pr-12 font-semibold"> Keywords found </td>
                     <td class=" py-4  ">
-                        {validatedXhr.callWithCookies.length > 0
+                        {validatedXhr.xhrSearchResult.searchResults.map((x) => {
+                            return x.keyword.original
+                        })
+                        .filter(
+                            (value, index, array) =>
+                                array.indexOf(value) === index,
+                        )
+                        .join(', ')};
+                        <!-- {validatedXhr.xhrSearchResult.searchResults.length > 0
                             ? validatedXhr.callWithCookies[
                                   validatedXhr.callWithCookies.length - 1
                               ].searchResults
@@ -55,7 +63,8 @@
                                           array.indexOf(value) === index,
                                   )
                                   .join(', ')
-                            : []}</td
+                            : []} -->
+                            </td
                     >
                 </tr>
                 <tr class=" border-b">
@@ -85,11 +94,13 @@
                         Validation request headers
                     </td>
                     <td class=" py-4  ">
+                        {#if validatedXhr.lastCall != null}
                         <JSONTree
-                            value={validatedXhr.callWithCookies[
-                                validatedXhr.callWithCookies.length - 1
-                            ].parsedRequestResponse.request.headers}
+                            value={validatedXhr.lastCall.parsedRequestResponse.request.headers}
                         />
+                        {:else}
+                            Failed to load last call's body. 
+                        {/if}
                     </td>
                 </tr>
                 <tr class=" border-b">
