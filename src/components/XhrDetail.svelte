@@ -1,7 +1,15 @@
 <script lang="ts">
-    import type { XhrValidation } from '@backend/*'
+    // import {type XhrValidation } from '@backend/types'
+    
     import JSONTree from 'svelte-json-tree'
     import pretty from 'pretty'
+    // import { type XhrValidation } from '@backend/src/types'
+    import type { XhrValidation } from '@backend/src/types'
+    import type { GotCallType } from '@backend/src/types'
+
+    // import { GotCallType } from '@backend/src/types'
+
+
 
     export let validatedXhr: XhrValidation
 </script>
@@ -55,7 +63,33 @@
                         Validation result
                     </td>
                     <td class=" py-4  ">
-                        {validatedXhr.validationSuccess}
+                       
+                            {#if !validatedXhr.validationSuccess}
+                            <div class="rounded-lg p-2 bg-red-200 inline">
+                                Failed to validate Request.
+                                </div>
+                                
+                            {:else if validatedXhr.lastCall != null}
+                            <div class="rounded-lg p-2 bg-green-200 inline">
+
+                                {#if validatedXhr.lastCall.callType === "minimalHeaders"} Sucessfully validated with minimal headers.{/if}
+                                {#if validatedXhr.lastCall.callType === "withouCookieHeaders"} Sucessfully validated with original headers without a cookie.{/if}
+                                {#if validatedXhr.lastCall.callType == "originalHeaders"} Sucessfully validated with original headers including a cookie.{/if}
+                            </div>
+                            {/if}
+                        
+                    </td>
+                </tr>
+                <tr class=" border-b">
+                    <td class=" py-4  pr-12 font-semibold">
+                        Validation request headers
+                    </td>
+                    <td class=" py-4  ">
+                        <JSONTree
+                            value={validatedXhr.callWithCookies[
+                                validatedXhr.callWithCookies.length - 1
+                            ].parsedRequestResponse.request.headers}
+                        />
                     </td>
                 </tr>
                 <tr class=" border-b">
@@ -108,13 +142,16 @@
                                 )}
                             />
                         {:else if validatedXhr.originalRequestResponse.response.headers['content-type'].indexOf('html') != -1}
-                            <div class="max-h-96 overflow-x-clip overflow-y-scroll">
+                            <div
+                                class="max-h-96 overflow-x-clip overflow-y-scroll"
+                            >
                                 <pre>
                                     <code>
-                                            {
-                                            pretty(validatedXhr.originalRequestResponse.response.body,{ ocd: true },
-                                            )
-                                        }
+                                            {pretty(
+                                            validatedXhr.originalRequestResponse
+                                                .response.body,
+                                            { ocd: true },
+                                        )}
     
                                     </code>
                                 </pre>

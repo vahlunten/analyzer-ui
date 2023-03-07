@@ -5,15 +5,16 @@
     export let title: string
     export let data: SearchResult[]
     export let debug: boolean
-    export let validated:boolean;
-    let selection: string[] = [];
+    export let validated: boolean
+    let selection: string[] = []
 
     // console.log(data);
 
-    const addToArray = (sr:SearchResult) => {
-		$selectedSelectors.keywordSelectors[sr.keyword.index].selectors.htmlFound.push(sr);
-	};
-
+    const addToArray = (sr: SearchResult) => {
+        $selectedSelectors.keywordSelectors[
+            sr.keyword.index
+        ].selectors.htmlFound.push(sr)
+    }
 </script>
 
 <main class="max-w-full mt-2">
@@ -34,9 +35,10 @@
             >
                 <thead class="text-sm text-gray-700 uppercase bg-gray-50">
                     <tr>
-                        <th scope="col" class="py-3 px-6"> Use in crawler </th>
-
                         {#if debug}
+                            <!-- <th scope="col" class="py-3 px-6">
+                                Use in crawler
+                            </th> -->
                             <th scope="col" class="py-3 px-6"> Long Path </th>
                         {/if}
                         <th scope="col" class="py-3 px-6"> Path </th>
@@ -65,10 +67,15 @@
                                 ? 'bg-green-200'
                                 : 'bg-red-200'} border-b dark:bg-gray-800 dark:border-gray-700"
                         >
-                            <td class="py-4 px-6">
-                               <input type="checkbox" bind:group={selection} value={dataUnit.path} on:click={() => addToArray(dataUnit)}/>
-                            </td>
                             {#if debug}
+                                <!-- <td class="py-4 px-6">
+                                    <input
+                                        type="checkbox"
+                                        bind:group={selection}
+                                        value={dataUnit.path}
+                                        on:click={() => addToArray(dataUnit)}
+                                    />
+                                </td> -->
                                 <td class="py-4 px-6"> {dataUnit.path} </td>
                             {/if}
                             <td class="py-4 px-6"> {dataUnit.pathShort} </td>
