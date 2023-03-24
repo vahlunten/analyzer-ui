@@ -10,6 +10,7 @@
         "check": "svelte-check --tsconfig ./tsconfig.json"
     },
     "dependencies": {
+        "@svelte-plugins/tooltips": "^0.1.6",
         "cheerio": "^1.0.0-rc.12",
         "pretty": "^2.0.0",
         "svelte-icons-pack": "^2.0.0",

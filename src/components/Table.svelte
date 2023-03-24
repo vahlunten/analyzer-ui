@@ -2,6 +2,14 @@
     import type { SearchResult } from '@backend/src/types'
     import { selectedSelectors } from '../stores/stores'
 
+    // import Tooltip from './Tooltip.svelte'
+    // import  ToolTip  from "./Tooltip.svelte";
+    import Tooltip from '../components/Tooltip.svelte'
+
+    import { tooltip } from '@svelte-plugins/tooltips'
+    import Icon from 'svelte-icons-pack/Icon.svelte'
+    import FiInfo from 'svelte-icons-pack/fi/FiInfo'
+
     export let title: string
     export let data: SearchResult[]
     export let debug: boolean
@@ -19,12 +27,22 @@
 
 <main class="max-w-full mt-2">
     {#if data.length > 0}
-        <div class="bg-gray-50 inline-flex rounded-lg">
-            <p
-                class="bg-gray-50 text-md px-3 pt-2 pb-1 width-auto font-semibold rounded-lg rounded-b-none"
-            >
+        <div
+            class="bg-gray-50 inline-flex rounded-lg rounded-b-none px-3 pt-2 pb-1"
+        >
+            <span class="text-md font-semibold">
                 {title}
-            </p>
+            </span>
+
+            <div class=" mx-2 my-1">
+                <!-- <Tooltip content="Hello world!">
+                <Icon size="1.3em" src={FiInfo} />
+               </Tooltip> -->
+
+                <Tooltip
+                    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis enim et imperdiet sollicitudin. Morbi viverra dui in elit laoreet, quis lacinia tellus sagittis. Aenean purus orci, auctor ac faucibus in, pellentesque non enim. Nam vel ullamcorper nibh. Pellentesque ut sem et nisi venenatis pretium. Sed in lectus erat. Proin porttitor sit amet lacus a faucibus. Nulla consequat dignissim maximus. Suspendisse viverra magna eget metus malesuada, in pulvinar augue gravida. Maecenas lacus erat, condimentum et mollis eget, lacinia id diam. Morbi auctor nibh et nisi tristique pellentesque. Phasellus euismod malesuada arcu, vitae porta eros tincidunt id. "
+                />
+            </div>
         </div>
 
         <div

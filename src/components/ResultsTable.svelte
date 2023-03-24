@@ -33,7 +33,14 @@
                             {kwconclusion.Keyword.original}
                         </td>
                         <td class="py-4 px-6">
-                            {kwconclusion.SearchResults.canBeScrapedWith}
+                           {#if kwconclusion.SearchResults.canBeScrapedWith.length > 0}
+                           {#each  kwconclusion.SearchResults.canBeScrapedWith as source}
+                           <div class="rounded-lg p-2 m-1 bg-green-200 inline">{source}</div>
+                           {/each}
+                           {:else}
+                           <div class="rounded-lg p-2 m-1 bg-red-200 inline">Not found</div>
+
+                           {/if}
                         </td>
                     </tr>
                 {/each}
