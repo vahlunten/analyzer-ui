@@ -1,18 +1,16 @@
 <script lang="ts">
-    import type { Output } from '@backend/src/types'
+    import type { Output, RunDetails } from '@backend/src/types'
 
-    export let out: Output
-    export let actorSuccess: boolean
-    export let cheerioCrawlerSuccess: boolean
-    export let errorMessage: string
+    export let out: RunDetails
+    let actorSuccess = true;
 </script>
 
-<main class="mt-2 max-w-fit">
+<main class="mt-2 max-w-full">
     <div
-        class="flex align-center overflow-x-auto relative shadow-md rounded-lg bg-white"
+        class="flex justify-between overflow-x-auto relative shadow-md rounded-lg bg-white"
     >
         <table
-            class="mx-6 float-left bg-white max-w-full text-sm text-left text-gray-700"
+            class="mx-6 float-left bg-white max-w-full  text-sm text-left text-gray-700"
         >
             <tbody>
                 <!-- URL -->
@@ -30,12 +28,12 @@
                 <!-- analysis started -->
                 <tr class=" border-b">
                     <td class=" py-4 font-semibold"> Start </td>
-                    <td class=" py-4 p-2"> {out.analysisStarted} </td>
+                    <td class=" py-4 p-2"> {out.started} </td>
                 </tr>
                 <!-- analysis ended -->
                 <tr class=" border-b">
                     <td class=" py-4 font-semibold"> End </td>
-                    <td class=" py-4 p-2"> {out.analysisEnded} </td>
+                    <td class=" py-4 p-2"> {out.started} </td>
                 </tr>
                 <!-- Actor status-->
                 <tr class=" border-b">
@@ -59,7 +57,7 @@
                     <tr class=" border-b">
                         <td class=" py-4  font-semibold"> Cheeriocrawler </td>
                         <td class=" py-4 ">
-                            {#if cheerioCrawlerSuccess}
+                            {#if actorSuccess}
                                 <div class="rounded-lg p-2 bg-green-200 inline">
                                     Cheerio crawler successfuly loaded the
                                     initial response.
@@ -77,7 +75,7 @@
                         <td class=" py-4  font-semibold"> Error </td>
                         <td class=" my-2 ">
                             <div class="rounded-lg my-2 p-2 bg-red-200">
-                                {errorMessage}
+                                {"errorMessage"}
                             </div>
                         </td>
                     </tr>

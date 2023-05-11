@@ -9,6 +9,13 @@
 
     // @ts-expect-error 2538
     $: page = routes[$path] || routes['/']
+
+    // if (window.location.href.indexOf("apify") != -1) {
+    //     console.log("displaying runs");
+    //     page = routes['/runs']
+    // } else {
+    //     page = routes['/']
+    // }
 </script>
 
 <svelte:component this={page} />

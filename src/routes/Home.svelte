@@ -25,12 +25,14 @@
         $output
     }
 
-    // fetch OUTPUT.json from the key-value storage
+    // fetch the OUTPUT.json from the key-value storage
     const fetchImage = (async () => {
+        console.log(window.location.href);
         const response = await fetch(
             // in the Apify platform, files are saved without file extension
-            import.meta.env.PROD ? './OUTPUT' : './OUTPUT.json',
+            window.location.href.indexOf("apify") != -1 ? './OUTPUT' : './OUTPUT.json',
         )
+        
         output.set((await response.json()) as Output)
         
         const defaultSelectors: CrawlerConfig = {keywordSelectors: []};
@@ -39,7 +41,7 @@
         // fetch the diff
         const initialResponse = await fetch(
             // './diff.bin',
-            import.meta.env.PROD ? './diff' : './diff.bin',
+            window.location.href.indexOf("apify") != -1 ? './diff' : './diff.html',
         )
         initialResponseStore.set(await initialResponse.text());
         // console.log($initialResponseStore);
@@ -51,7 +53,7 @@
 </script>
 
 <svelte:head>
-    <link rel="icon" type="image/png" href={'../../public/favicon-32x32.png'} />
+    <!-- <link rel="icon" type="image/png" href={'../../public/favicon-32x32.png'} /> -->
 </svelte:head>
 
 <main class="m-4">

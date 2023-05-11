@@ -39,9 +39,9 @@
                 <Icon size="1.3em" src={FiInfo} />
                </Tooltip> -->
 
-                <Tooltip
+                <!-- <Tooltip
                     text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas mattis enim et imperdiet sollicitudin. Morbi viverra dui in elit laoreet, quis lacinia tellus sagittis. Aenean purus orci, auctor ac faucibus in, pellentesque non enim. Nam vel ullamcorper nibh. Pellentesque ut sem et nisi venenatis pretium. Sed in lectus erat. Proin porttitor sit amet lacus a faucibus. Nulla consequat dignissim maximus. Suspendisse viverra magna eget metus malesuada, in pulvinar augue gravida. Maecenas lacus erat, condimentum et mollis eget, lacinia id diam. Morbi auctor nibh et nisi tristique pellentesque. Phasellus euismod malesuada arcu, vitae porta eros tincidunt id. "
-                />
+                /> -->
             </div>
         </div>
 
@@ -49,7 +49,7 @@
             class="overflow-x-auto relative shadow-md rounded-tl-none rounded-lg"
         >
             <table
-                class="break-word w-full text-sm text-left text-gray-700 dark:text-gray-400"
+                class="table-fixed break-normal w-full text-sm text-left text-gray-700 dark:text-gray-400"
             >
                 <thead class="text-sm text-gray-700 uppercase bg-gray-50">
                     <tr>
